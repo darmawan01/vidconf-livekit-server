@@ -49,5 +49,9 @@
 	<string>This app needs access to camera for video calls</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app needs access to microphone for video calls</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 </dict>
 </plist>
