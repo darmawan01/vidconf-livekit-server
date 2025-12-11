@@ -45,3 +45,7 @@ app.*.map.json
 
 # Environment variables
 .env
+
+# livekit/vidconf.db
+livekit/api
+
