@@ -157,10 +157,11 @@ sequenceDiagram
         Caller->>Caller: Navigate to CallScreen<br/>(from OutgoingCallScreen)
         
         Note over Caller,Callee: 4. Active Call Phase
-        Caller<->>LiveKit: Real-time media exchange<br/>(audio/video streams)
-        Callee<->>LiveKit: Real-time media exchange<br/>(audio/video streams)
-        LiveKit<->>Caller: Media relay
-        LiveKit<->>Callee: Media relay
+        Caller->>LiveKit: Send audio/video streams
+        LiveKit-->>Caller: Receive remote streams
+        Callee->>LiveKit: Send audio/video streams
+        LiveKit-->>Callee: Receive remote streams
+        Note over LiveKit: LiveKit relays media<br/>between participants
         
     else Callee Rejects
         Callee->>Backend: POST /api/calls/invitations/respond<br/>{invitationId, action: "reject"}
